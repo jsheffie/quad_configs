@@ -1,5 +1,5 @@
 # version
-# BetaFlight/NAZE 2.1.6 Dec 16 2015 / 19:34:30 (360141e)
+# BetaFlight/NAZE 2.1.6 Dec 20 2015 / 14:14:03 (6a64c19)
 # dump master
 
 # mixer
@@ -124,7 +124,7 @@ set auto_disarm_delay = 5
 set small_angle = 25
 set fixedwing_althold_dir = 1
 set reboot_character = 82
-set serialrx_provider = SPEK2048
+set serialrx_provider = SPEK1024
 set spektrum_sat_bind = 0
 set telemetry_switch = OFF
 set telemetry_inversion = OFF
@@ -204,8 +204,8 @@ rxfail 17 h
 profile 0
 
 # aux
-aux 0 0 0 900 1200
-aux 1 27 2 900 1200
+aux 0 0 0 900 1700
+aux 1 27 0 900 1200
 aux 2 12 1 900 1200
 aux 3 0 0 900 900
 aux 4 0 0 900 900
@@ -266,8 +266,8 @@ set gtune_settle_time = 450
 set gtune_average_cycles = 16
 set alt_hold_deadband = 40
 set alt_hold_fast_change = ON
-set deadband = 6
-set yaw_deadband = 6
+set deadband = 0
+set yaw_deadband = 0
 set throttle_correction_value = 0
 set throttle_correction_angle = 800
 set default_rate_profile = 0
