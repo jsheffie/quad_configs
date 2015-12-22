@@ -1,5 +1,5 @@
 # version
-# BetaFlight/NAZE 2.1.6 Dec 20 2015 / 14:14:03 (6a64c19)
+# BetaFlight/NAZE 2.1.4 Nov 25 2015 / 20:22:47 (449999d)
 # dump master
 
 # mixer
@@ -30,19 +30,18 @@ feature -DISPLAY
 feature -ONESHOT125
 feature -BLACKBOX
 feature -CHANNEL_FORWARDING
-feature RX_PPM
 feature VBAT
 feature FAILSAFE
-feature TELEMETRY
+feature RX_PARALLEL_PWM
 feature ONESHOT125
 
 
 # map
-map TAER1234
+map AETR1234
 
 
 # serial
-serial 0 5 115200 57600 0 115200
+serial 0 1 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
 
 
@@ -107,8 +106,7 @@ set rssi_channel = 0
 set rssi_scale = 30
 set rssi_ppm_invert = OFF
 set input_filtering_mode = OFF
-set rc_smoothing = OFF
-set min_throttle = 1046
+set min_throttle = 1150
 set max_throttle = 1850
 set min_command = 1000
 set servo_center_pulse = 1500
@@ -119,12 +117,13 @@ set 3d_deadband_throttle = 50
 set enable_fast_pwm = OFF
 set motor_pwm_rate = 400
 set servo_pwm_rate = 50
+set retarded_arm = OFF
 set disarm_kill_switch = ON
 set auto_disarm_delay = 5
 set small_angle = 25
 set fixedwing_althold_dir = 1
 set reboot_character = 82
-set serialrx_provider = SPEK2048
+set serialrx_provider = SPEK1024
 set spektrum_sat_bind = 0
 set telemetry_switch = OFF
 set telemetry_inversion = OFF
@@ -148,13 +147,14 @@ set align_acc = DEFAULT
 set align_mag = DEFAULT
 set align_board_roll = 0
 set align_board_pitch = 0
-set align_board_yaw = 90
+set align_board_yaw = 0
 set max_angle_inclination = 700
-set gyro_lpf = 188HZ
+set gyro_sampling = 1KHZ
 set moron_threshold = 32
 set imu_dcm_kp = 2500
 set imu_dcm_ki = 0
 set yaw_control_direction = 1
+set pid_at_min_throttle = PD
 set yaw_motor_direction = 1
 set yaw_jump_prevention_limit = 200
 set tri_unarmed_servo = ON
@@ -204,9 +204,9 @@ rxfail 17 h
 profile 0
 
 # aux
-aux 0 0 0 900 1700
-aux 1 27 0 900 1200
-aux 2 12 1 900 1200
+aux 0 0 0 900 900
+aux 1 0 0 900 900
+aux 2 0 0 900 900
 aux 3 0 0 900 900
 aux 4 0 0 900 900
 aux 5 0 0 900 900
@@ -284,21 +284,21 @@ set baro_noise_lpf =  0.600
 set baro_cf_vel =  0.985
 set baro_cf_alt =  0.965
 set mag_declination = 0
-set pid_controller = LUX
+set pid_controller = MWREWRITE
 set p_pitch = 40
 set i_pitch = 30
-set d_pitch = 23
+set d_pitch = 18
 set p_roll = 40
 set i_roll = 30
-set d_roll = 23
+set d_roll = 18
 set p_yaw = 100
 set i_yaw = 50
 set d_yaw = 10
 set p_pitchf =  1.500
-set i_pitchf =  0.300
+set i_pitchf =  0.400
 set d_pitchf =  0.020
 set p_rollf =  1.500
-set i_rollf =  0.300
+set i_rollf =  0.400
 set d_rollf =  0.020
 set p_yawf =  4.000
 set i_yawf =  0.400
@@ -315,9 +315,9 @@ set d_level = 100
 set p_vel = 120
 set i_vel = 45
 set d_vel = 1
-set gyro_soft_lpf = ON
+set gyro_soft_lpf = LOW
 set dterm_cut_hz = 40
-set yaw_pterm_cut_hz = 0
+set yaw_pterm_cut_hz = 50
 
 # dump rates
 
@@ -329,9 +329,8 @@ set rc_expo = 70
 set rc_yaw_expo = 20
 set thr_mid = 50
 set thr_expo = 0
-set roll_rate = 55
-set pitch_rate = 55
-set yaw_rate = 66
+set roll_rate = 0
+set pitch_rate = 0
+set yaw_rate = 0
 set tpa_rate = 0
 set tpa_breakpoint = 1500
-
