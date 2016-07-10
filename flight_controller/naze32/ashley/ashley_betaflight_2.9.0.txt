@@ -38,6 +38,7 @@ feature VBAT
 feature SOFTSERIAL
 feature FAILSAFE
 feature TELEMETRY
+feature CURRENT_METER
 feature RSSI_ADC
 feature ONESHOT125
 feature SUPEREXPO_RATES
@@ -71,7 +72,7 @@ map TAER1234
 # serial
 serial 0 1 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
-serial 30 5 9600 57600 0 115200
+serial 30 5 115200 57600 0 115200
 serial 31 0 115200 57600 0 115200
 
 
@@ -213,12 +214,12 @@ set auto_disarm_delay = 5
 set small_angle = 25
 set fixedwing_althold_dir = 1
 set reboot_character = 82
-set serialrx_provider = SPEK2048
+set serialrx_provider = SPEK1024
 set sbus_inversion = ON
 set spektrum_sat_bind = 0
 set spektrum_sat_bind_autoreset = 1
 set telemetry_switch = OFF
-set telemetry_inversion = OFF
+set telemetry_inversion = ON
 set frsky_default_lattitude =  0.000
 set frsky_default_longitude =  0.000
 set frsky_coordinates_format = 0
@@ -245,7 +246,7 @@ set align_board_pitch = 0
 set align_board_yaw = 0
 set max_angle_inclination = 700
 set gyro_lpf = OFF
-set gyro_sync_denom = 8
+set gyro_sync_denom = 4
 set gyro_lowpass = 100
 set moron_threshold = 32
 set imu_dcm_kp = 2500
@@ -271,7 +272,7 @@ set failsafe_procedure = OFF
 set rx_min_usec = 885
 set rx_max_usec = 2115
 set gimbal_mode = NORMAL
-set acc_hardware = AUTO
+set acc_hardware = NONE
 set acc_lpf_hz =  10.000
 set accxy_deadband = 40
 set accz_deadband = 40
@@ -282,8 +283,8 @@ set baro_tab_size = 21
 set baro_noise_lpf =  0.600
 set baro_cf_vel =  0.985
 set baro_cf_alt =  0.965
-set baro_hardware = AUTO
-set mag_hardware = AUTO
+set baro_hardware = NONE
+set mag_hardware = NONE
 set mag_declination = 0
 set pid_process_denom = 2
 set blackbox_rate_num = 0
