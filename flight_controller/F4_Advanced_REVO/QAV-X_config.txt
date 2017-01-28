@@ -1,3 +1,4 @@
+
 # version
 # Betaflight / REVO 3.1.0 Jan 25 2017 / 09:50:07 (88693ca)
 
@@ -87,6 +88,7 @@ feature -VTX
 feature -RX_SPI
 feature -SOFTSPI
 feature -ESC_SENSOR
+feature RX_SERIAL
 feature FAILSAFE
 feature BLACKBOX
 
@@ -111,11 +113,11 @@ beeper SYSTEM_INIT
 beeper ON_USB
 
 # map
-map AETR1234
+map TAER1234
 
 # serial
 serial 20 1 115200 57600 0 115200
-serial 0 0 115200 57600 0 115200
+serial 0 64 115200 57600 0 115200
 serial 2 0 115200 57600 0 115200
 serial 5 0 115200 57600 0 115200
 
@@ -222,8 +224,8 @@ mode_color 6 10 0
 mode_color 7 0 3
 
 # aux
-aux 0 0 0 900 900
-aux 1 0 0 900 900
+aux 0 0 0 900 1600
+aux 1 27 0 900 1200
 aux 2 0 0 900 900
 aux 3 0 0 900 900
 aux 4 0 0 900 900
@@ -330,7 +332,7 @@ set nav_speed_max = 300
 set nav_slew_rate = 30
 set beeper_inversion = OFF
 set beeper_od = ON
-set serialrx_provider = SPEK1024
+set serialrx_provider = SBUS
 set sbus_inversion = ON
 set spektrum_sat_bind = 0
 set spektrum_sat_bind_autoreset = 1
@@ -366,7 +368,7 @@ set align_acc = DEFAULT
 set align_mag = DEFAULT
 set align_board_roll = 0
 set align_board_pitch = 0
-set align_board_yaw = 0
+set align_board_yaw = -90
 set gyro_lpf = OFF
 set gyro_sync_denom = 1
 set gyro_isr_update = OFF
