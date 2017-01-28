@@ -1,4 +1,3 @@
-
 # version
 # Betaflight / REVO 3.1.0 Jan 25 2017 / 09:50:07 (88693ca)
 
@@ -6,13 +5,13 @@
 name -
 
 # resources
-resource BEEPER NONE
+resource BEEPER A00
 resource MOTOR 1 B00
 resource MOTOR 2 B01
 resource MOTOR 3 A03
 resource MOTOR 4 A02
 resource MOTOR 5 A01
-resource MOTOR 6 A00
+resource MOTOR 6 NONE
 resource MOTOR 7 NONE
 resource MOTOR 8 NONE
 resource MOTOR 9 NONE
