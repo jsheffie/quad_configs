@@ -5,13 +5,13 @@
 name -
 
 # resources
-resource BEEPER NONE
+resource BEEPER A00
 resource MOTOR 1 B00
 resource MOTOR 2 B01
 resource MOTOR 3 A03
 resource MOTOR 4 A02
 resource MOTOR 5 A01
-resource MOTOR 6 A00
+resource MOTOR 6 NONE
 resource MOTOR 7 NONE
 resource MOTOR 8 NONE
 resource MOTOR 9 NONE
@@ -87,6 +87,7 @@ feature -VTX
 feature -RX_SPI
 feature -SOFTSPI
 feature -ESC_SENSOR
+feature RX_SERIAL
 feature FAILSAFE
 feature BLACKBOX
 
@@ -111,11 +112,11 @@ beeper SYSTEM_INIT
 beeper ON_USB
 
 # map
-map AETR1234
+map TAER1234
 
 # serial
 serial 20 1 115200 57600 0 115200
-serial 0 0 115200 57600 0 115200
+serial 0 64 115200 57600 0 115200
 serial 2 0 115200 57600 0 115200
 serial 5 0 115200 57600 0 115200
 
@@ -222,9 +223,9 @@ mode_color 6 10 0
 mode_color 7 0 3
 
 # aux
-aux 0 0 0 900 900
-aux 1 0 0 900 900
-aux 2 0 0 900 900
+aux 0 0 0 900 1600
+aux 1 27 0 900 1200
+aux 2 12 1 900 1200
 aux 3 0 0 900 900
 aux 4 0 0 900 900
 aux 5 0 0 900 900
@@ -330,7 +331,7 @@ set nav_speed_max = 300
 set nav_slew_rate = 30
 set beeper_inversion = OFF
 set beeper_od = ON
-set serialrx_provider = SPEK1024
+set serialrx_provider = SBUS
 set sbus_inversion = ON
 set spektrum_sat_bind = 0
 set spektrum_sat_bind_autoreset = 1
@@ -366,7 +367,7 @@ set align_acc = DEFAULT
 set align_mag = DEFAULT
 set align_board_roll = 0
 set align_board_pitch = 0
-set align_board_yaw = 0
+set align_board_yaw = -90
 set gyro_lpf = OFF
 set gyro_sync_denom = 1
 set gyro_isr_update = OFF
@@ -403,7 +404,7 @@ set failsafe_throttle_low_delay = 100
 set failsafe_procedure = DROP
 set rx_min_usec = 885
 set rx_max_usec = 2115
-set acc_hardware = AUTO
+set acc_hardware = NONE
 set acc_lpf_hz = 10
 set accxy_deadband = 40
 set accz_deadband = 40
@@ -459,12 +460,12 @@ set accum_threshold = 200
 set yaw_accum_threshold = 55
 set yaw_lowpass = 0
 set p_pitch = 58
-set i_pitch = 50
-set d_pitch = 22
-set p_roll = 44
-set i_roll = 40
-set d_roll = 20
-set p_yaw = 70
+set i_pitch = 55
+set d_pitch = 38
+set p_roll = 45
+set i_roll = 48
+set d_roll = 28
+set p_yaw = 90
 set i_yaw = 45
 set d_yaw = 20
 set p_alt = 50
@@ -483,14 +484,16 @@ rateprofile 0
 # rateprofile
 rateprofile 0
 
-set rc_rate = 100
-set rc_rate_yaw = 100
+set rc_rate = 139
+set rc_rate_yaw = 139
 set rc_expo = 0
 set rc_yaw_expo = 0
 set thr_mid = 50
 set thr_expo = 0
-set roll_srate = 70
-set pitch_srate = 70
-set yaw_srate = 70
+set roll_srate = 78
+set pitch_srate = 78
+set yaw_srate = 78
 set tpa_rate = 10
 set tpa_breakpoint = 1650
+
+# 
