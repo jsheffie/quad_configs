@@ -1,0 +1,77 @@
+# JDS Notes:
+
+      RC Rate    Super Rate    RC Expo
+ROLL   2.13       0.00         0.20 
+PITCH             0.00                     This was unflyable... too quick
+YAW    2.10       0.00         0.20
+ 
+ROLL   1.90       0.00         0.30 
+PITCH             0.00                     flew great, could not do a roll ( rates too slow) .
+YAW    2.10       0.00         0.30
+
+ROLL   1.90       0.60         0.00 
+PITCH             0.60                     Test...
+YAW    2.10       0.20         0.00
+
+
+
+# version
+# BetaFlight/NAZE 3.0.0 Sep 11 2016 / 00:35:30 (a21694b)
+
+# name
+
+# mixer
+
+# servo
+
+# servo mix
+
+
+# feature
+feature -RX_PARALLEL_PWM
+feature RX_PPM
+
+# beeper
+
+# map
+
+# serial
+serial 1 1 115200 57600 0 115200
+
+# led
+
+# color
+
+# mode_color
+
+# aux
+aux 0 0 0 900 1700
+aux 1 27 0 900 1275
+aux 2 1 0 1300 1700
+
+# adjrange
+
+# rxrange
+
+# rxfail
+
+# master
+set motor_pwm_protocol = BRUSHED
+
+# profile
+profile 0
+
+rateprofile 0
+
+# rateprofile
+rateprofile 0
+
+set rc_rate = 190
+set rc_rate_yaw = 200
+set rc_expo = 30
+set rc_yaw_expo = 30
+set roll_srate = 0
+set pitch_srate = 0
+set yaw_srate = 0
+
+# 
