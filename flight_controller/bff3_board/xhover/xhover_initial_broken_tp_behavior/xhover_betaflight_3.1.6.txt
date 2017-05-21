@@ -1,5 +1,5 @@
 # Betaflight / BETAFLIGHTF3 3.1.6 Feb 21 2017 / 14:14:49 (1fd502c)
-name -
+name jeffield
 resource BEEPER 1 C15
 resource MOTOR 1 A06
 resource MOTOR 2 A07
@@ -124,11 +124,11 @@ beeper DISARM_REPEAT
 beeper ARMED
 beeper SYSTEM_INIT
 beeper ON_USB
-map AETR1234
+map TAER1234
 serial 20 1 115200 57600 0 115200
 serial 0 0 115200 57600 0 115200
 serial 1 64 115200 57600 0 115200
-serial 2 0 115200 57600 0 115200
+serial 2 2048 115200 57600 0 115200
 led 0 0,0::C:0
 led 1 0,0::C:0
 led 2 0,0::C:0
@@ -225,9 +225,9 @@ mode_color 6 8 0
 mode_color 6 9 0
 mode_color 6 10 0
 mode_color 7 0 3
-aux 0 0 0 900 900
-aux 1 0 0 900 900
-aux 2 0 0 900 900
+aux 0 0 0 900 1600
+aux 1 27 0 900 1325
+aux 2 12 1 900 1400
 aux 3 0 0 900 900
 aux 4 0 0 900 900
 aux 5 0 0 900 900
@@ -296,7 +296,7 @@ set input_filtering_mode = OFF
 set fpv_mix_degrees = 0
 set max_aux_channels = 14
 set debug_mode = NONE
-set min_throttle = 1070
+set min_throttle = 1030
 set max_throttle = 2000
 set min_command = 1000
 set digital_idle_percent =  4.500
@@ -305,7 +305,7 @@ set 3d_deadband_high = 1514
 set 3d_neutral = 1460
 set 3d_deadband_throttle = 50
 set use_unsynced_pwm = OFF
-set motor_pwm_protocol = ONESHOT125
+set motor_pwm_protocol = MULTISHOT
 set motor_pwm_rate = 480
 set disarm_kill_switch = ON
 set gyro_cal_on_first_arm = OFF
@@ -369,7 +369,7 @@ set gyro_lowpass_type = PT1
 set gyro_lowpass = 90
 set gyro_notch1_hz = 400
 set gyro_notch1_cut = 300
-set gyro_notch2_hz = 200
+set gyro_notch2_hz = 260
 set gyro_notch2_cut = 100
 set moron_threshold = 48
 set imu_dcm_kp = 2500
@@ -404,8 +404,8 @@ set accxy_deadband = 40
 set accz_deadband = 40
 set acc_unarmedcal = ON
 set acc_trim_pitch = 0
-set acc_trim_roll = 0
-set pid_process_denom = 4
+set acc_trim_roll = 6
+set pid_process_denom = 1
 set blackbox_rate_num = 1
 set blackbox_rate_denom = 1
 set blackbox_device = SDCARD
@@ -414,21 +414,21 @@ set ledstrip_visual_beeper = OFF
 set sdcard_dma = ON
 set osd_units = IMPERIAL
 set osd_rssi_alarm = 20
-set osd_cap_alarm = 2200
-set osd_time_alarm = 10
+set osd_cap_alarm = 800
+set osd_time_alarm = 4
 set osd_alt_alarm = 100
-set osd_vbat_pos = 2060
-set osd_rssi_pos = 22
-set osd_flytimer_pos = 2454
-set osd_ontimer_pos = 2422
-set osd_flymode_pos = 2412
+set osd_vbat_pos = 2081
+set osd_rssi_pos = 20
+set osd_flytimer_pos = 2102
+set osd_ontimer_pos = 2518
+set osd_flymode_pos = 364
 set osd_throttle_pos = 129
 set osd_vtx_channel_pos = 200
 set osd_crosshairs = 0
-set osd_horizon_pos = 2248
-set osd_current_pos = 97
-set osd_mah_drawn_pos = 111
-set osd_craft_name_pos = 396
+set osd_horizon_pos = 200
+set osd_current_pos = 2529
+set osd_mah_drawn_pos = 2553
+set osd_craft_name_pos = 2496
 set osd_gps_speed_pos = 66
 set osd_gps_sats_pos = 386
 set osd_altitude_pos = 161
@@ -458,7 +458,7 @@ set gps_nav_i = 33
 set gps_nav_d = 83
 set yaw_p_limit = 500
 set pidsum_limit =  0.500
-set d_lowpass_type = BIQUAD
+set d_lowpass_type = PT1
 set d_lowpass = 100
 set d_notch_hz = 260
 set d_notch_cut = 160
@@ -474,13 +474,13 @@ set iterm_windup = 50
 set yaw_lowpass = 0
 set p_pitch = 58
 set i_pitch = 50
-set d_pitch = 22
+set d_pitch = 26
 set p_roll = 44
 set i_roll = 40
-set d_roll = 20
+set d_roll = 25
 set p_yaw = 70
 set i_yaw = 45
-set d_yaw = 20
+set d_yaw = 25
 set p_alt = 50
 set i_alt = 0
 set d_alt = 0
@@ -495,15 +495,14 @@ set level_limit = 55
 rateprofile 0
 rateprofile 0
 
-set rc_rate = 100
-set rc_rate_yaw = 100
-set rc_expo = 0
-set rc_yaw_expo = 0
+set rc_rate = 139
+set rc_rate_yaw = 139
+set rc_expo = 35
+set rc_yaw_expo = 35
 set thr_mid = 50
 set thr_expo = 0
-set roll_srate = 70
-set pitch_srate = 70
-set yaw_srate = 70
-set tpa_rate = 10
-set tpa_breakpoint = 1650
-
+set roll_srate = 78
+set pitch_srate = 78
+set yaw_srate = 78
+set tpa_rate = 25
+set tpa_breakpoint = 1500
