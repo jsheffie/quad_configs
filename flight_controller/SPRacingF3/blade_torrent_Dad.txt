@@ -445,14 +445,14 @@ set level_limit = 55
 rateprofile 0
 rateprofile 0
 
-set rc_rate = 100
-set rc_rate_yaw = 100
+set rc_rate = 139
+set rc_rate_yaw = 139
 set rc_expo = 0
 set rc_yaw_expo = 0
 set thr_mid = 50
 set thr_expo = 0
-set roll_srate = 70
-set pitch_srate = 70
-set yaw_srate = 70
+set roll_srate = 78
+set pitch_srate = 78
+set yaw_srate = 78
 set tpa_rate = 10
 set tpa_breakpoint = 1650
