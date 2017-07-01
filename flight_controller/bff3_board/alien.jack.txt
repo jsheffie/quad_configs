@@ -1,5 +1,5 @@
 # Betaflight / BETAFLIGHTF3 3.1.7 Apr  3 2017 / 21:43:25 (e1c4b5c)
-name -
+name FlapJack
 resource BEEPER 1 C15
 resource MOTOR 1 A06
 resource MOTOR 2 A07
@@ -125,11 +125,11 @@ beeper DISARM_REPEAT
 beeper ARMED
 beeper SYSTEM_INIT
 beeper ON_USB
-map AETR1234
+map TAER1234
 serial 20 1 115200 57600 0 115200
 serial 0 0 115200 57600 0 115200
 serial 1 64 115200 57600 0 115200
-serial 2 0 115200 57600 0 115200
+serial 2 2048 115200 57600 0 115200
 led 0 0,0::C:0
 led 1 0,0::C:0
 led 2 0,0::C:0
@@ -226,10 +226,10 @@ mode_color 6 8 0
 mode_color 6 9 0
 mode_color 6 10 0
 mode_color 7 0 3
-aux 0 0 0 900 900
-aux 1 0 0 900 900
-aux 2 0 0 900 900
-aux 3 0 0 900 900
+aux 0 0 0 925 1600
+aux 1 28 0 900 1200
+aux 2 4 0 900 1200
+aux 3 13 1 925 1400
 aux 4 0 0 900 900
 aux 5 0 0 900 900
 aux 6 0 0 900 900
@@ -306,7 +306,7 @@ set 3d_deadband_high = 1514
 set 3d_neutral = 1460
 set 3d_deadband_throttle = 50
 set use_unsynced_pwm = OFF
-set motor_pwm_protocol = ONESHOT125
+set motor_pwm_protocol = MULTISHOT
 set motor_pwm_rate = 480
 set disarm_kill_switch = ON
 set gyro_cal_on_first_arm = OFF
@@ -368,9 +368,9 @@ set gyro_isr_update = OFF
 set gyro_use_32khz = OFF
 set gyro_lowpass_type = PT1
 set gyro_lowpass = 90
-set gyro_notch1_hz = 400
+set gyro_notch1_hz = 0
 set gyro_notch1_cut = 300
-set gyro_notch2_hz = 200
+set gyro_notch2_hz = 0
 set gyro_notch2_cut = 100
 set moron_threshold = 48
 set imu_dcm_kp = 2500
@@ -382,7 +382,7 @@ set yaw_deadband = 0
 set thr_corr_value = 0
 set thr_corr_angle = 800
 set yaw_control_direction = 1
-set yaw_motor_direction = 1
+set yaw_motor_direction = -1
 set servo_center_pulse = 1500
 set tri_unarmed_servo = ON
 set servo_lowpass_hz = 400
@@ -406,7 +406,7 @@ set accz_deadband = 40
 set acc_unarmedcal = ON
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set pid_process_denom = 4
+set pid_process_denom = 1
 set blackbox_rate_num = 1
 set blackbox_rate_denom = 1
 set blackbox_device = SDCARD
@@ -415,21 +415,21 @@ set ledstrip_visual_beeper = OFF
 set sdcard_dma = ON
 set osd_units = IMPERIAL
 set osd_rssi_alarm = 20
-set osd_cap_alarm = 2200
-set osd_time_alarm = 10
+set osd_cap_alarm = 800
+set osd_time_alarm = 3
 set osd_alt_alarm = 100
-set osd_vbat_pos = 2060
+set osd_vbat_pos = 2081
 set osd_rssi_pos = 22
-set osd_flytimer_pos = 2454
-set osd_ontimer_pos = 2422
-set osd_flymode_pos = 2412
+set osd_flytimer_pos = 2103
+set osd_ontimer_pos = 2551
+set osd_flymode_pos = 364
 set osd_throttle_pos = 129
-set osd_vtx_channel_pos = 200
+set osd_vtx_channel_pos = 2496
 set osd_crosshairs = 0
-set osd_horizon_pos = 2248
+set osd_horizon_pos = 200
 set osd_current_pos = 97
 set osd_mah_drawn_pos = 111
-set osd_craft_name_pos = 396
+set osd_craft_name_pos = 2528
 set osd_gps_speed_pos = 66
 set osd_gps_sats_pos = 386
 set osd_altitude_pos = 161
@@ -466,17 +466,17 @@ set d_notch_cut = 160
 set vbat_pid_gain = OFF
 set pid_at_min_throttle = ON
 set anti_gravity_thresh = 350
-set anti_gravity_gain =  3.000
+set anti_gravity_gain =  3.500
 set setpoint_relax_ratio = 100
 set d_setpoint_weight = 60
 set yaw_accel_limit =  10.000
 set accel_limit =  0.000
 set iterm_windup = 50
 set yaw_lowpass = 0
-set p_pitch = 58
+set p_pitch = 63
 set i_pitch = 50
 set d_pitch = 35
-set p_roll = 44
+set p_roll = 49
 set i_roll = 40
 set d_roll = 30
 set p_yaw = 70
