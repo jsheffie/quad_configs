@@ -1,0 +1,31 @@
+# diff
+# Betaflight / BETAFLIGHTF3 3.1.7 Apr  3 2017 / 21:43:25 (e1c4b5c)
+name jeffield
+
+map TAER1234
+serial 2 2048 115200 57600 0 115200
+aux 0 0 0 900 1400
+aux 1 28 0 900 1200
+aux 2 4 0 900 1400
+aux 3 13 1 900 1300
+set min_throttle = 1045
+set motor_pwm_protocol = MULTISHOT
+set yaw_motor_direction = -1
+set osd_vbat_pos = 2081
+set osd_flytimer_pos = 2090
+set osd_ontimer_pos = 2517
+set osd_flymode_pos = 364
+set osd_horizon_pos = 200
+set osd_craft_name_pos = 2497
+profile 0
+
+rateprofile 0
+rateprofile 0
+
+set rc_rate = 139
+set rc_rate_yaw = 139
+set rc_expo = 35
+set rc_yaw_expo = 35
+set roll_srate = 78
+set pitch_srate = 78
+set yaw_srate = 78
