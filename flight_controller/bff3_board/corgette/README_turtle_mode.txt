@@ -28,6 +28,9 @@ Usage:
 
 
 My BF Setup things:
+# diff
+# Betaflight / BETAFLIGHTF3 3.1.7 Apr  3 2017 / 21:43:25 (e1c4b5c)
+name jeffield
 
 map TAER1234
 serial 2 2048 115200 57600 0 115200
