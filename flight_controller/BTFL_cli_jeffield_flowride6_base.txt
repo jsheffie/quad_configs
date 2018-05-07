@@ -1,0 +1,142 @@
+# version
+# Betaflight / CLRACINGF4 (CLR4) 3.3.1 Apr  3 2018 / 09:28:24 (4b7eaf79d) MSP API: 1.37
+
+# name
+name jeffield
+
+# feature
+feature ANTI_GRAVITY
+feature DYNAMIC_FILTER
+
+# beeper
+
+# map
+map TAER1234
+
+# serial
+serial 0 64 115200 57600 0 115200
+serial 3 2048 115200 57600 0 115200
+
+# aux
+aux 0 0 0 900 1300 0
+aux 1 13 1 900 1300 0
+aux 2 26 0 900 1300 0
+aux 3 28 0 900 1300 0
+aux 4 35 2 900 1300 0
+aux 5 36 3 1700 2100 0
+
+# master
+set serialrx_provider = SBUS
+set min_throttle = 1048
+set dshot_idle_value = 175
+set motor_pwm_protocol = DSHOT600
+set yaw_motors_reversed = ON
+set small_angle = 180
+set pid_process_denom = 1
+set osd_warnings = 63
+set osd_vbat_pos = 2081
+set osd_tim_1_pos = 54
+set osd_tim_2_pos = 2113
+set osd_craft_name_pos = 2433
+set debug_mode = NOTCH
+set vtx_band = 5
+set vtx_channel = 3
+set vtx_power = 2
+set vtx_freq = 5732
+
+# profile
+profile 0
+
+# rateprofile
+rateprofile 0
+
+set roll_rc_rate = 139
+set pitch_rc_rate = 139
+set yaw_rc_rate = 139
+set roll_expo = 35
+set pitch_expo = 35
+set yaw_expo = 35
+set roll_srate = 78
+set pitch_srate = 78
+set yaw_srate = 78
+
+
+##########################
+### Gyro values 1st try ( approach #2 )
+## These numbers are based on my motor noise being around 120-160hz
+##########################
+set gyro_stage2_lowpass_hz = 90
+feature DYNAMIC_FILTER
+set gyro_lowpass_hz = 0
+set gyro_notch1_hz = 0
+set gyro_notch2_hz = 0
+set dterm_notch_hz = 0
+
+##########################
+### Gyro values 2nd try ( approach #1 )
+## These numbers are based on my motor noise being around 120-160hz
+##########################
+set gyro_stage2_lowpass_hz = 120
+feature -DYNAMIC_FILTER
+set gyro_lowpass_hz = 90
+set gyro_lowpass_type = PT1
+set gyro_notch1_hz = 0
+set gyro_notch2_hz = 0
+set dterm_notch_hz = 0
+
+
+
+
+##########################
+##########################
+##########################
+### Defualt Gyro values.... don't copy these
+##########################
+##########################
+##########################
+
+##########################
+gyro_stage2_lowpass_hz = 0
+
+gyro_lpf = OFF
+# Allowed values: OFF, 188HZ, 98HZ, 42HZ, 20HZ, 10HZ, 5HZ, EXPERIMENTAL
+
+gyro_sync_denom = 1
+
+##########################
+# Static Notch 1 && 2
+##########################
+gyro_lowpass_type = PT1
+# Allowed values: PT1, BIQUAD, FIR
+
+gyro_lowpass_hz = 90
+
+gyro_notch1_hz = 400
+gyro_notch1_cutoff = 300
+
+gyro_notch2_hz = 200
+gyro_notch2_cutoff = 100
+
+gyro_offset_yaw = 0
+gyro_overflow_detect = ALL
+
+##########################
+# dterm Lowpass filter
+##########################
+dterm_lowpass_type = BIQUAD
+
+dterm_lowpass = 100
+dterm_notch_hz = 260
+dterm_notch_cutoff = 160
+dterm_setpoint_weight = 0
+
+
+motor_pwm_protocol = DSHOT600
+Allowed values: OFF, ONESHOT125, ONESHOT42, MULTISHOT, BRUSHED, DSHOT150, DSHOT300, DSHOT600, DSHOT1200, PROSHOT1000
+motor_pwm_rate = 480
+
+
+
+
+
+ 
