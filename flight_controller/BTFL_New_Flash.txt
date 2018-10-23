@@ -1,0 +1,28 @@
+- Flash FC
+- Setup -> Calibrate Accelerometer
+- Ports -> UART1 Serial RX
+- Configuration -> Motor Direction Reversed
+- Configuration -> - Gyro PID loop: 8k 8k
+- Configuration -> Receiver: SBUS
+- Configuration -> ESC * DSHOT 1200 ( 1070/2000/1000 ) 
+- PID ( my rates ) 
+- Receiver  map TAER1234
+- MODES ( my modes ) 
+aux 0 0 0 1400 1600 0 0
+aux 1 1 3 900 1300 0 0
+aux 2 13 1 900 1300 0 0
+aux 3 35 5 1700 2100 0 0
+adjrange 0 0 4 900 2100 12 4 0 0
+
+- Motor Order ( for tubular builds/can vary depending on build type/board rotation ) 
+resource MOTOR 1 B00
+resource MOTOR 2 B01
+resource MOTOR 3 A03
+resource MOTOR 4 A02
+
+
+- Motor Direction ( which BL Heli Suite? ) 
+
+- bind receiver... 
+- stick endpoints
+- test huvr
